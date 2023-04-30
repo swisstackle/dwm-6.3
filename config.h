@@ -23,6 +23,12 @@ static const char *colors[][3]      = {
 static const char *vol_down[] = { "amixer", "-c", "1", "set", "Master", "10%-", NULL };
 static const char *vol_up[] = { "amixer", "-c", "1", "set", "Master", "10%+", NULL };
 
+/* Screen Lock Controls (slock) */
+static const char *screen_lock[] = { "slock", NULL };
+
+
+
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
@@ -93,6 +99,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ 0,                            XK_F2,     spawn,          {.v = vol_down } },
 	{ 0,                            XK_F3,     spawn,          {.v = vol_up } },
+	{ MODKEY,						XK_l,     spawn,          {.v = screen_lock } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
